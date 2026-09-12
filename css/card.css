@@ -1,0 +1,111 @@
+.card {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.phase-tag {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 8px;
+    margin-bottom: 14px;
+}
+
+h2 {
+    font-family: var(--serif);
+    font-weight: normal;
+    font-size: 21px;
+    margin: 0 0 10px;
+}
+
+p {
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+}
+
+.statement {
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--ink);
+    margin: 0 0 20px;
+    line-height: 1.45;
+}
+
+.likert {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.likert button {
+    flex: 1;
+    padding: 12px 4px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 13px;
+    cursor: pointer;
+    font-family: var(--sans);
+}
+
+.likert button:hover {
+    border-color: var(--accent);
+}
+
+.likert button.selected {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+}
+
+.likert-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+}
+
+.choice-list button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    cursor: pointer;
+    font-family: var(--sans);
+}
+
+.choice-list button:hover {
+    border-color: var(--accent);
+}
+
+.choice-list button.selected {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.reveal {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 14px;
+}
+
+.reveal .label {
+    font-weight: bold;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}

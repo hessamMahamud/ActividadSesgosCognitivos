@@ -1,0 +1,102 @@
+ .nav {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 22px;
+ }
+
+ .nav button {
+     padding: 10px 20px;
+     border: 1px solid var(--ink);
+     background: var(--ink);
+     color: var(--paper);
+     font-size: 14px;
+     cursor: pointer;
+     font-family: var(--sans);
+ }
+
+ .nav button:disabled {
+     opacity: 0.3;
+     cursor: not-allowed;
+ }
+
+ .nav button.ghost {
+     background: transparent;
+     color: var(--ink);
+ }
+
+ .progress {
+     font-size: 12px;
+     color: var(--ink-soft);
+     margin-bottom: 6px;
+ }
+
+ .scale-row {
+     margin-bottom: 22px;
+ }
+
+ .scale-row .name {
+     font-size: 14px;
+     margin-bottom: 4px;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .scale-row .name .score {
+     font-family: var(--serif);
+     font-size: 18px;
+ }
+
+ .bar-track {
+     height: 8px;
+     background: var(--line);
+     position: relative;
+ }
+
+ .bar-fill {
+     height: 8px;
+     background: var(--accent);
+ }
+
+ .scale-desc {
+     font-size: 12px;
+     color: var(--ink-soft);
+     margin-top: 4px;
+ }
+
+ .badges {
+     display: flex;
+     gap: 10px;
+     margin: 20px 0;
+     flex-wrap: wrap;
+ }
+
+ .badge {
+     border: 1px solid var(--line);
+     padding: 8px 12px;
+     font-size: 13px;
+     background: var(--paper);
+ }
+
+ .closing {
+     font-family: var(--serif);
+     font-size: 17px;
+     line-height: 1.6;
+     font-style: italic;
+     border-top: 1px solid var(--line);
+     padding-top: 18px;
+     margin-top: 6px;
+ }
+
+ .restart {
+     margin-top: 24px;
+     text-align: center;
+ }
+
+ .restart button {
+     background: transparent;
+     border: 1px solid var(--ink);
+     color: var(--ink);
+     padding: 10px 22px;
+     cursor: pointer;
+     font-family: var(--sans);
+ }
