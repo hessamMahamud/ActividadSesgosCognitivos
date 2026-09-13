@@ -2,7 +2,7 @@ import { state } from './state.js';
 import { computeProfile } from './scoring.js';
 
 // TODO: cuando despliegues el backend, cambiar esto por la URL real (ej. Railway).
-const API_URL = 'http://localhost:3001/api/reportes';
+const API_URL = '/api/reportes';
 
 export async function guardarReporte() {
     try {
