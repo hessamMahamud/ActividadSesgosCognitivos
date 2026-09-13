@@ -1,18 +1,21 @@
 import { state } from '../state.js';
 import { QUESTIONS, SCALES } from '../data/questions.js';
+import { computeProfile, scaleLabel } from '../scoring.js';
 
-function computeProfile() {
-    const result = {};
+function renderExplicaciones() {
+    let html = '<div class="explicaciones">';
     Object.keys(SCALES).forEach(key => {
-        const items = QUESTIONS.filter(q => q.scale === key);
-        const sum = items.reduce((acc, q) => acc + (state.answers[q.id] || 3), 0);
-        result[key] = Math.round(sum / items.length);
+        html += `<h3 class="explicaciones-scale">${SCALES[key].name}</h3>`;
+        QUESTIONS.filter(q => q.scale === key).forEach(q => {
+            html += `
+      <div class="reveal">
+        <p class="statement-mini">${q.text}</p>
+        <span class="label">SESGO ASOCIADO</span>${q.reveal}
+      </div>`;
+        });
     });
-    return result;
-}
-
-function scaleLabel(n) {
-    return ["", "Sesgo bajo", "Sesgo leve", "Sesgo moderado", "Sesgo alto", "Sesgo muy alto"][n];
+    html += '</div>';
+    return html;
 }
 
 export function renderResultado() {
@@ -42,6 +45,8 @@ export function renderResultado() {
     ${bars}
     <div class="badges">${lindaBadge}${pedroBadge}</div>
     <p class="closing">"Los seres humanos tendemos a convertir nuestras identidades morales en señales de superioridad, mediante mecanismos cognitivos automáticos —efecto halo, representatividad, sesgo de confirmación y favoritismo endogrupal— con independencia del contenido específico de esa identidad."</p>
+    <h2>Sesgos explicados</h2>
+    ${renderExplicaciones()}
     <div class="restart">
       <button data-action="restart">Volver a empezar</button>
     </div>

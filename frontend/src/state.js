@@ -3,7 +3,6 @@ function defaultState() {
         phase: 'intro',
         qIndex: 0,
         answers: {},
-        showReveal: false,
         lindaChoice: null,
         pedroChoice: null,
     };

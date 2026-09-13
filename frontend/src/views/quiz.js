@@ -20,7 +20,6 @@ export function renderQuiz() {
     <span class="phase-tag">FASE 1 — ESCALA DE ACUERDO</span>
     <p class="statement">${q.text}</p>
     ${likertRow(q.id)}
-    ${state.showReveal ? `<div class="reveal"><span class="label">SESGO ASOCIADO</span>${q.reveal}</div>` : ''}
     <div class="nav">
       <button class="ghost" data-action="prev-question" ${state.qIndex === 0 ? 'disabled' : ''}>Anterior</button>
       <button data-action="next-question" ${answered ? '' : 'disabled'}>${state.qIndex === QUESTIONS.length - 1 ? 'Continuar' : 'Siguiente'}</button>

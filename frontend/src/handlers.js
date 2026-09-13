@@ -1,13 +1,12 @@
 import { state, resetState } from './state.js';
 import { QUESTIONS } from './data/questions.js';
+import { guardarReporte } from './api.js';
 
 export function pickLikert(qId, val) {
     state.answers[qId] = val;
-    state.showReveal = true;
 }
 
 export function nextQuestion() {
-    state.showReveal = false;
     if (state.qIndex < QUESTIONS.length - 1) {
         state.qIndex++;
     } else {
@@ -16,7 +15,6 @@ export function nextQuestion() {
 }
 
 export function prevQuestion() {
-    state.showReveal = false;
     if (state.qIndex > 0) {
         state.qIndex--;
     }
@@ -32,6 +30,11 @@ export function pickPedro(choice) {
 
 export function goPhase(phase) {
     state.phase = phase;
+    // No usamos await: no queremos que la UI espere a que termine el POST
+    // para mostrar el resultado. guardarReporte() maneja sus propios errores.
+    if (phase === 'resultado') {
+        guardarReporte();
+    }
 }
 
 export function restart() {

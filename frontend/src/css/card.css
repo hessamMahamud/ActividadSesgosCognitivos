@@ -109,3 +109,11 @@ p {
     font-size: 12px;
     letter-spacing: 0.03em;
 }
+
+.statement-mini {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
